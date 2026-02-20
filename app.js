@@ -184,3 +184,5 @@ function renderCart() {
 /* Inicialização */
 renderCart();
 loadProducts();
+
+const WHATSAPP_NUMBER = "5522997060908"

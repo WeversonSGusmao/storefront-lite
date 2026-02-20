@@ -129,6 +129,38 @@ function renderCart() {
   }
 }
 
+function addToCart(product) {
+  const idx = state.cart.findIndex(i => i.id === product.id);
+  if (idx >= 0) state.cart[idx].qty += 1;
+  else state.cart.push({ id: product.id, name: product.name, price: product.price, qty: 1 });
+  persistCart(); renderCart();
+}
+
+function removeFromCart(id) {
+  const idx = state.cart.findIndex(i => i.id === id);
+  if (idx >= 0) {
+    state.cart[idx].qty -= 1;
+    if (state.cart[idx].qty <= 0) state.cart.splice(idx,1);
+  }
+  persistCart(); renderCart();
+}
+
+function clearCart() { state.cart = []; persistCart(); renderCart(); }
+
+/* ---------- Checkout via WhatsApp ---------- */
+function buildWhatsAppMessage() {
+  if (!state.cart.length) return 'Olá! Quero fazer um pedido.';
+  const linhas = state.cart.map(i => `• ${i.qty}× ${i.name} — ${fmtBRL(i.price)}`);
+  linhas.push(`\nSubtotal: ${fmtBRL(cartSubtotal())}`);
+  linhas.push('\nPor favor, confirme disponibilidade e prazo de entrega.');
+  return `Olá! Gostaria de pedir:\n${linhas.join('\n')}`;
+}
+function openWhatsApp() {
+  const msg = encodeURIComponent(buildWhatsAppMessage());
+  const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${msg}`;
+  window.open(url, '_blank', 'noopener,noreferrer');
+}
+
 /* Tema (dark/light) com persistência */
 (function themeInit(){
   const root = document.documentElement;

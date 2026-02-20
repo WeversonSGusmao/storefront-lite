@@ -1,0 +1,2 @@
+# storefront-lite
+storefront-lite

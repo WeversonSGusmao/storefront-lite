@@ -13,27 +13,9 @@ Ela demonstra um mini e‑commerce com **busca**, **filtros**, **ordenação**, 
 ## ✨ Demonstração
 
 - **Live**: _adicione aqui a URL do GitHub Pages_  
-  `https://seuusuario.github.io/storefront-lite/`
-
-> **Dica**: no GitHub, vá em **Settings → Pages** e selecione “Deploy from a branch” (branch `main`, pasta `/`) para publicar.
+  `https://weversonsgusmao.github.io/storefront-lite/`
 
 ---
-
-## 🧭 Sumário
-
-- [Recursos](#-recursos)
-- [Tecnologias](#-tecnologias)
-- [Estrutura do projeto](#-estrutura-do-projeto)
-- [Como executar](#-como-executar)
-- [Configuração do WhatsApp](#-configuração-do-whatsapp)
-- [Acessibilidade](#-acessibilidade)
-- [Boas práticas aplicadas](#-boas-práticas-aplicadas)
-- [Próximas melhorias](#-próximas-melhorias)
-- [Autor](#-autor)
-- [Licença](#-licença)
-
----
-
 ## ✅ Recursos
 
 - **Catálogo dinâmico** carregado de `data/products.json`

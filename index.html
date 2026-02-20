@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Storefront Lite — Catálogo com Carrinho</title>
+  <meta name="description" content="Catálogo de produtos com busca, filtros, ordenação e carrinho. Feito em JavaScript puro.">
+  <meta name="theme-color" content="#0b1220">
+
+  <!-- Open Graph básico para preview -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Storefront Lite — Catálogo com Carrinho">
+  <meta property="og:description" content="SPA com JavaScript puro: busca, filtros, ordenação e carrinho com localStorage.">
+  <meta property="og:image" content="https://dummyimage.com/1200x630/111827/ffffff&text=Storefront+Lite">
+
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🛒</text></svg>">
+  <link rel="stylesheet" href="styles.css" />
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <header class="container site-header">
+    <h1 class="logo">Storefront <span class="accent">Lite</span></h1>
+
+    <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Alternar tema" title="Alternar tema">
+      <span id="theme-icon" aria-hidden="true">🌙</span>
+    </button>
+  </header>
+
+  <main class="container">
+    <section class="toolbar" aria-label="Ferramentas do catálogo">
+      <div class="search">
+        <label for="q" class="sr-only">Buscar</label>
+        <input id="q" type="search" placeholder="Buscar produto..." autocomplete="off" />
+      </div>
+
+      <div class="filters">
+        <label for="category">Categoria</label>
+        <select id="category">
+          <option value="all">Todas</option>
+        </select>
+
+        <label for="sort">Ordenar por</label>
+        <select id="sort">
+          <option value="name-asc">Nome (A–Z)</option>
+          <option value="name-desc">Nome (Z–A)</option>
+          <option value="price-asc">Preço (menor)</option>
+          <option value="price-desc">Preço (maior)</option>
+        </select>
+      </div>
+    </section>
+
+    <section aria-live="polite" aria-busy="true">
+      <h2 class="sr-only">Resultados</h2>
+      <ul id="grid" class="grid" role="list"></ul>
+      <p id="empty" class="empty" hidden>Nenhum produto encontrado.</p>
+    </section>
+  </main>
+
+  <aside class="cart-panel" aria-label="Carrinho">
+    <button id="cart-toggle" class="cart-button" aria-expanded="false" aria-controls="cart" title="Abrir carrinho">🛒<span id="cart-count" class="badge">0</span></button>
+    <div id="cart" class="cart" hidden>
+      <header class="cart__header">
+        <h2>Carrinho</h2>
+        <button id="cart-close" class="icon-btn" aria-label="Fechar carrinho">✕</button>
+      </header>
+      <ul id="cart-items" class="cart__items" role="list"></ul>
+      <footer class="cart__footer">
+        <div class="row">
+          <span>Subtotal</span>
+          <strong id="cart-subtotal">R$ 0,00</strong>
+        </div>
+        <button id="cart-clear" class="btn ghost">Esvaziar</button>
+        <button class="btn primary" id="checkout">Finalizar (demo)</button>
+      </footer>
+    </div>
+  </aside>
+
+  <footer class="container site-footer">
+    <small>Feito com HTML • CSS • JS por <strong>Weverson Gusmão</strong></small>
+  </footer>
+</body>
+</html>

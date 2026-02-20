@@ -15,7 +15,6 @@ https://weversonsgusmao.github.io/storefront-lite/
 - Ordenação por nome e preço  
 - Carrinho persistente com `localStorage`  
 - Subtotal calculado em tempo real  
-- Finalização via WhatsApp  
 - Tema claro/escuro com toggle  
 - Layout responsivo (mobile-first)  
 

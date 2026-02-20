@@ -157,7 +157,7 @@ function buildWhatsAppMessage() {
 }
 function openWhatsApp() {
   const msg = encodeURIComponent(buildWhatsAppMessage());
-  const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${msg}`;
+  const url = `https://wa.me/${5522997060908}?text=${msg}`;
   window.open(url, '_blank', 'noopener,noreferrer');
 }
 
